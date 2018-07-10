@@ -11,7 +11,7 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
-        AppComponent //, DashboardComponent
+        AppComponent // DashboardComponent
       ],
       // shallow unit test
       schemas: [
