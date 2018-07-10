@@ -23,6 +23,12 @@ export class DashboardComponent implements OnInit {
       title: 'Angular JX1.x',
       description: 'das alte Framework',
       rating: 4
+    },
+    {
+      isbn: '002',
+      title: 'Krieg und Frieden',
+      description: 'Test',
+      rating: 3
     }];
   }
 
