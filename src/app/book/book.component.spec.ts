@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 import { BookRatingService } from '../shared/book-rating.service';
 import { BookComponent } from './book.component';
@@ -13,6 +14,8 @@ describe('BookComponent', () => {
   };
 
   beforeEach(async(() => {
+
+    spyOn(ratingMock, 'rateUp').and.callThrough();
     TestBed.configureTestingModule({
       declarations: [BookComponent],
       providers: [{
@@ -35,8 +38,16 @@ describe('BookComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  // BDD Test
+  it('should forward the rateUp call to the book rating service', () => {
+    component.rateUp();
+    expect(ratingMock.rateUp).toHaveBeenCalled();
+  });
+
+  it('should call the service when the BUTTON is clicked', () => {
+    const rateUpButton = fixture.debugElement.query(By.css('[testRateUpButton]')).nativeElement as HTMLButtonElement;
+    rateUpButton.click();
+    expect(ratingMock.rateUp).toHaveBeenCalled();
   });
 
 });
