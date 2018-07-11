@@ -17,7 +17,7 @@ export class BookComponent {
 
   }
 
-  @Input() book: Book = {} as Book;
+  @Input() book: Book;
   @Output() rate = new EventEmitter<Book>(true); // true = async aktiv
 
   rateUp() {
