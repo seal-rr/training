@@ -9,8 +9,12 @@
     </div>
     <p>{{ book.description }}</p>
 
+    <button class="btn btn-danger" (click)="rateDown()">-1</button>
+    <button class="btn btn-success ml-2" (click)="rateUp()">+1</button>
+
   </div>
 </div>
 
 
-<button class="btn btn-primary" (click)="book.rating = 99"> Klick mich</button>
+<!-- <button class="btn btn-primary" (click)="book.rating = 99"> Klick mich</button>
+-->
