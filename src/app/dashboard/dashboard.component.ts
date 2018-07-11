@@ -32,4 +32,20 @@ export class DashboardComponent implements OnInit {
     }];
   }
 
+  reorderBooks(book: Book) {
+    console.log('Zur Info: ', book);
+
+    this.books = this.books
+      .map(b => b.isbn === book.isbn ? book : b)
+      .sort((a, b) => b.rating - a.rating);
+
+    // option B
+    /*
+    const cleanedList = this.books.filter(b => b.isbn !== book.isbn);
+    this.books = [...cleanedList, book]
+    .sort((a,b) => b.rating - a.rating);
+    */
+
+  }
+
 }

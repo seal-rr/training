@@ -16,19 +16,20 @@ export class BookComponent {
   constructor(private rs: BookRatingService) {
 
   }
+
   @Input() book: Book = {} as Book;
-  @Output() rate = new EventEmitter<Book>();
+  @Output() rate = new EventEmitter<Book>(true); // true = async aktiv
 
   rateUp() {
     const ratedBook = this.rs.rateUp(this.book);
-    this.rate.emit(ratedBook);
-    this.book = ratedBook;
+    // this.book = ratedBook;
+    this.rate.emit(ratedBook);  // asyncrone Aufrufe ans Ende
   }
 
   rateDown() {
     const ratedBook = this.rs.rateDown(this.book);
+    // this.book = ratedBook;
     this.rate.emit(ratedBook);
-    this.book = ratedBook;
   }
 
 }

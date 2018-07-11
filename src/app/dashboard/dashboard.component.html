@@ -1,4 +1,4 @@
-<br-book *ngFor="let b of books" [book]="b">
+<br-book *ngFor="let b of books" [book]="b" (rate)="reorderBooks($event)">
 </br-book>
 
 <!--
