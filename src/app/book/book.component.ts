@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { Book } from '../shared/book';
 import { BookRatingService } from '../shared/book-rating.service';
@@ -6,7 +6,10 @@ import { BookRatingService } from '../shared/book-rating.service';
 @Component({
   selector: 'br-book',
   templateUrl: './book.component.html',
-  styleUrls: ['./book.component.scss']
+  styleUrls: ['./book.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush // Komponente prüft nur seine lokalen Events und reicht diese an seine Kinder weiter.
+  // Ansonsten würde sie auf alle Events hören und nicht weiterreichen
+  // None als eigene CD evtl. sinnvoll wenn nur statische Inhalte
 })
 export class BookComponent {
 
