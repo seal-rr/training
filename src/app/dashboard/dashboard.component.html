@@ -2,6 +2,8 @@
 </br-create-book>
 
 <hr>
+<div>Anzahl der Bücher: {{ books.length }}</div>
+<hr>
 
 <br-book *ngFor="let b of books" [book]="b" (rate)="reorderBooks($event)">
 </br-book>

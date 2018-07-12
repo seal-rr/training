@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Book } from './book';
 
 @Injectable({
-  providedIn: 'root' // Angular 6 way
+  providedIn: 'root' // Angular 6 way .. ist aber bei TestBed mit drin
 })
 
 export class BookRatingService {
