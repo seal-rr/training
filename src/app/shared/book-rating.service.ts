@@ -48,6 +48,6 @@ export class BookRatingService {
           myBook.rating = 1;
         }
         return myBook;
-        */
+    */
   }
 }
