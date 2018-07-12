@@ -1,3 +1,4 @@
+import { browser } from '../../node_modules/protractor';
 import { AppPage } from './app.po';
 
 describe('workspace-project App', () => {
@@ -9,6 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to book-rating!');
+    browser.sleep(3000);
+    expect(page.getParagraphText()).toEqual('Book Rating!');
   });
 });
